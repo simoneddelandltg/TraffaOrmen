@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace TraffaOrmen
 {
-    class SpelScen
+    class SpelScen : Scen
     {
         Random slump = new Random();
 
@@ -18,7 +18,7 @@ namespace TraffaOrmen
         int updatesMellanNyaOrmar = 90;
         int updatesTillNästaOrm = 90;
 
-        public void Initialize(ContentManager Content)
+        public override void Initialize(ContentManager Content)
         {
             ormBild = Content.Load<Texture2D>("snake");
             ormar.Clear();
@@ -29,7 +29,7 @@ namespace TraffaOrmen
             updatesTillNästaOrm = updatesMellanNyaOrmar;
         }
 
-        public void Update()
+        public override void Update()
         {
             updatesTillNästaOrm--;
             if (updatesTillNästaOrm <= 0)
@@ -52,11 +52,11 @@ namespace TraffaOrmen
 
             if (ormar.Count == 0)
             {
-                Game1.BytScen(0);
+                Game1.BytScen(new MenyScen());
             }
         }
 
-        public void Draw(SpriteBatch _spriteBatch)
+        public override void Draw(SpriteBatch _spriteBatch)
         {
             _spriteBatch.Begin();
 

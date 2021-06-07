@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace TraffaOrmen
 {
-    class MenyScen
+    class MenyScen : Scen
     {
         SpriteFont arial;
         Texture2D knappBild;
@@ -16,7 +16,7 @@ namespace TraffaOrmen
         string välkomstText = "Träffa ormen!";
         Vector2 välkomstPosition;
 
-        public void Initialize(ContentManager Content)
+        public override void Initialize(ContentManager Content)
         {
             arial = Content.Load<SpriteFont>("arial");         
             knappBild = Content.Load<Texture2D>("button");
@@ -24,15 +24,15 @@ namespace TraffaOrmen
             välkomstPosition = new Vector2(400 - arial.MeasureString(välkomstText).X / 2, 100);
         }
 
-        public void Update()
+        public override void Update()
         {
             if (Input.VänsterMusTryckt() && knappRect.Contains(Input.mus.Position))
             {
-                Game1.BytScen(1);
+                Game1.BytScen(new SpelScen());
             }
         }
 
-        public void Draw(SpriteBatch _spriteBatch)
+        public override void Draw(SpriteBatch _spriteBatch)
         {
             
 

@@ -10,10 +10,7 @@ namespace TraffaOrmen
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        // 0 för meny, 1 för spelet
-        static int scen = 0;
-        static MenyScen meny = new MenyScen();
-        static SpelScen spel = new SpelScen();
+        static Scen nuvarandeScen;
         static ContentManager contentManager;
 
         public Game1()
@@ -35,23 +32,16 @@ namespace TraffaOrmen
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            BytScen(0);
+            BytScen(new MenyScen());
         }
 
         protected override void Update(GameTime gameTime)
         {
 
             Input.Update();
+
+            nuvarandeScen.Update();
             
-            switch (scen)
-            {
-                case 0:
-                    meny.Update();
-                    break;
-                case 1:
-                    spel.Update();
-                    break;
-            }    
 
             base.Update(gameTime);
         }
@@ -60,32 +50,15 @@ namespace TraffaOrmen
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            switch (scen)
-            {
-                case 0:
-                    meny.Draw(_spriteBatch);
-                    break;
-                case 1:
-                    spel.Draw(_spriteBatch);
-                    break;
-            }
+            nuvarandeScen.Draw(_spriteBatch);
 
             base.Draw(gameTime);
         }
 
-        public static void BytScen(int nyScen)
+        public static void BytScen(Scen nyScen)
         {
-            scen = nyScen;
-
-            switch (scen)
-            {
-                case 0:
-                    meny.Initialize(contentManager);
-                    break;
-                case 1:
-                    spel.Initialize(contentManager);
-                    break;
-            }
+            nuvarandeScen = nyScen;
+            nuvarandeScen.Initialize(contentManager);
         }
     }
 }
