@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraffaOrmen", "TraffaOrmen\TraffaOrmen.csproj", "{16D0F0A5-A0C5-4C2B-A9EA-DEE34F6ADDDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16D0F0A5-A0C5-4C2B-A9EA-DEE34F6ADDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D0F0A5-A0C5-4C2B-A9EA-DEE34F6ADDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D0F0A5-A0C5-4C2B-A9EA-DEE34F6ADDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D0F0A5-A0C5-4C2B-A9EA-DEE34F6ADDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB27F58A-BF25-4F81-AD2E-35CF5C8B5316}
+	EndGlobalSection
+EndGlobal
